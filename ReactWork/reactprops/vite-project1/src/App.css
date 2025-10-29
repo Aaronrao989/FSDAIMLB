@@ -1,0 +1,59 @@
+/* Base reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #eaeff2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ID Card Container */
+.student-card {
+  background-color: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  padding: 24px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.student-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Header: Name */
+.student-card h1 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Info rows */
+.student-card p {
+  font-size: 15px;
+  margin: 6px 0;
+  color: #555;
+}
+
+/* Highlighted values */
+.student-card .highlight {
+  font-weight: 600;
+  color: #0077cc;
+}
+
+/* Optional: Add a logo or avatar */
+.student-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  object-fit: cover;
+  border: 2px solid #0077cc;
+}

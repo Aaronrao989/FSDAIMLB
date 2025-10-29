@@ -6,7 +6,7 @@ const li1=React.createElement("li",{},"Java");
 const li2=React.createElement("li",{},"Python");
 const li3=React.createElement("li",{},"C++");
 const ul=React.createElement("ul",{style:{backgroundColor:'cyan'}},[li1,li2,li3]);
-const pic=React.createElement("img",{src:"https://media.licdn.com/dms/image/v2/D5635AQFZQKOP7fQWQg/profile-framedphoto-shrink_400_400/B56ZaQuKG9HgAg-/0/1746184741596?e=1761127200&v=beta&t=9U-DE2eugm3KRURlaDo3QFK10oV2c3UoNOvSCqWPeX8",style:{width:'200px',height:'200px'},alt:"img"});
+const pic=React.createElement("img",{src:"https://media.licdn.com/dms/image/v2/D5635AQFZQKOP7fQWQg/profile-framedphoto-shrink_400_400/B56ZaQuKG9HgAg-/0/1746184741596?e=1762142400&v=beta&t=8T_c9H2gEHacjuSX7Uzmb-wiyjHbchQmDhBpMMqSNb0",style:{width:'200px',height:'200px'},alt:"img"});
 const myname=React.createElement("h1",{style:{display:"flex",justifyContent:"center"}},"My name is Aaron Rao");
 const container=React.createElement("div",{style:{display:"flex",justifyContent:"center"}},pic,myname);
 const header=React.createElement("h1",{},pic,myname);
