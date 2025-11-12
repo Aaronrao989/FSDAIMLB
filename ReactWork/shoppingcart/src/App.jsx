@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-// Import your page components (make sure these files exist in src/component/)
-import Login from "./component/login";
-import Register from "./component/registration";
-import Dashboard from "./component/dashboard";
-import MainLayout from "./component/mainlayout";// optional shopping cart page
+// Import your page components
+import Login from "./component/Login";
+import Register from "./component/Registration";
+import Dashboard from "./component/Dashboard";
+import MainLayout from "./component/MainLayout";
 
 function App() {
+  const [logData, setLogData] = useState(null);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register regData={setLogData} />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/mainlayout" element={<MainLayout />} />
+        </Routes>
+      </BrowserRouter>
+
+      <h2>{JSON.stringify(logData)}</h2>
+    </>
   );
 }
 

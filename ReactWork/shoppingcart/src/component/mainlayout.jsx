@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';  // ✅ Import Link
 
-function mainlayout() {
+function MainLayout() {   // ✅ Capitalize component name
   return (
     <div>
-      <h2>main</h2>
+      <nav>
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
+      </nav>
     </div>
-  )
+  );
 }
 
-export default mainlayout
+export default MainLayout;
