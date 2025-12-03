@@ -5,16 +5,28 @@ function Registration({ regData }) {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  function getData(e) {
+  async function getData(e) {
     e.preventDefault();
-    const data = {
-      name,
-      email,
-      password
-    };
-    regData(data);
-    // console.log(data);
+    const data = { name, email, password };
+
+    try {
+      const response = await fetch("http://localhost:5656/register", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const res = await response.json();
+      alert(res.msg);
+
+      // If you want to pass data back to parent
+      if (regData) regData(result);
+
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
   }
+
 
   return (
     <div>
@@ -24,6 +36,7 @@ function Registration({ regData }) {
           <label htmlFor="nameInput">Name</label>
           <input
             type="text"
+            value={name}
             onChange={(e) => setName(e.target.value)}
             className="form-control"
             id="nameInput"
@@ -34,6 +47,7 @@ function Registration({ regData }) {
           <label htmlFor="emailInput">Email address</label>
           <input
             type="email"
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="form-control"
             id="emailInput"
@@ -48,6 +62,7 @@ function Registration({ regData }) {
           <label htmlFor="passwordInput">Password</label>
           <input
             type="password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="form-control"
             id="passwordInput"
